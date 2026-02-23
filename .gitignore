@@ -1,0 +1,26 @@
+# Build artifacts
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+startup_tail.txt
+
+# Maven Wrapper executable
+# (Optional: Keep these if you want others to build without installing Maven)
+# mvnw
+# mvnw.cmd
+
+# IDE Specific files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific batch files (if they contain local paths)
+# run.bat
