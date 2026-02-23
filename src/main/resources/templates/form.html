@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <div class="card p-4">
-            <h2 class="mb-4" th:text="${product.id == null ? 'Add New Product' : 'Edit the Product'}">Product Management
+            <h2 class="mb-4" th:text="${product.id == null ? 'Add New Product' : 'Edit  Product'}">Product Management
             </h2>
             <form th:action="@{/save}" th:object="${product}" method="post">
                 <input type="hidden" th:field="*{id}" />
