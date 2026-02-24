@@ -27,6 +27,7 @@
                         <th>SKU</th>
                         <th>Quantity</th>
                         <th>Location</th>
+                        <th>Location2</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -35,6 +36,7 @@
                         <td th:text="${product.name}">Name</td>
                         <td th:text="${product.sku}">SKU</td>
                         <td th:text="${product.quantity}">0</td>
+                        <td th:text="${product.location != null ? product.location.name : 'Unknown'}">Location</td>
                         <td th:text="${product.location != null ? product.location.name : 'Unknown'}">Location</td>
                         <td>
                             <a th:href="@{/edit/{id}(id=${product.id})}" class="btn btn-sm btn-outline-secondary">Edit</a>
