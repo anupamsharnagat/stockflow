@@ -14,11 +14,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # 1. Change directory to where your PR Review Agent is installed
-          # MODIFY THIS PATH to match your local installation
           cd "E:\rnd\antigravity\prreviewsystem"
           
-          # 2. Ensure your local environment is active if needed
-          .\.venv\Scripts\Activate.ps1
+          # 2. Activate the virtual environment if you are using one
+          # For Windows (PowerShell):
+          & ".\.venv\Scripts\Activate.ps1"
           
           # 3. Trigger the analysis CLI
           $env:PYTHONPATH="."
