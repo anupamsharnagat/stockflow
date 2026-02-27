@@ -18,8 +18,12 @@ public class ProductController {
     private LocationRepository locationRepository;
 
     @GetMapping("/")
-    public String listProducts(Model model) {
-        model.addAttribute("products", productRepository.findAll());
+    public String listProducts(@RequestParam(value = "search", required = false) String search, Model model) {
+        if (search != null && !search.isEmpty()) {
+            model.addAttribute("products", productRepository.findByNameUnsafe(search));
+        } else {
+            model.addAttribute("products", productRepository.findAll());
+        }
         return "list";
     }
 
@@ -48,6 +52,18 @@ public class ProductController {
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable("id") Long id) {
         productRepository.deleteById(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/debug")
+    public String debug(@RequestParam(value = "msg", required = false) String msg, Model model) {
+        model.addAttribute("msg", msg);
+        return "debug";
+    }
+
+    @GetMapping("/admin/wipe")
+    public String wipeAll() {
+        productRepository.deleteAll();
         return "redirect:/";
     }
 }

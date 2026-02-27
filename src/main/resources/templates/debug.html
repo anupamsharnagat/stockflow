@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Debug Info</title>
+</head>
+
+<body>
+    <h1>Debug Dashboard</h1>
+    <div style="border: 1px solid red; padding: 10px;">
+        <p><strong>Message from System:</strong></p>
+        <!-- VULNERABLE: th:utext renders unescaped HTML -->
+        <div th:utext="${msg}"></div>
+    </div>
+    <br />
+    <a href="/">Back to List</a>
+</body>
+
+</html>
